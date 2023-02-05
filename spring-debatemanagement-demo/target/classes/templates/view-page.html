@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="../static/css/view-page.css"
+      th:href="@{/css/view-page.css}"
+      type="text/css"
+    />
+    <title>view page</title>
+  </head>
+  <body>
+    <div class="container--header">
+      <header>
+        <h1>Student Debate Management Application</h1>
+        <a th:href="@{/student-dash-board/students}" class="link--tickets"
+          >Students</a
+        >
+        <div class="user">
+          <p th:text="${user.username}">Username</p>
+          <form
+            action="/admin/search-ticket"
+            th:action="@{/logout}"
+            method="get"
+          >
+            <input type="submit" value="Logout" class="btn btn--logout" />
+          </form>
+        </div>
+      </header>
+    </div>
+    <main>
+      <div class="form--heading">
+        <h2>Student No: <strong th:text="${student.id}"></strong></h2>
+      </div>
+      <div class="form">
+        <div>
+          <h3>Student First Name</h3>
+          <p th:text="${student.firstName}">Lorem ipsum dolor sit</p>
+        </div>
+        <div>
+          <h3>Student Last Name</h3>
+          <p th:text="${student.lastName}">Lorem ipsum dolor sit</p>
+        </div>
+        <div>
+          <h3>Course</h3>
+          <p th:text="${student.course}">Lorem ipsum dolor sit amet</p>
+        </div>
+        <div>
+          <h3>Country</h3>
+          <p th:text="${student.country}">Lorem ipsum dolor sit</p>
+        </div>
+        <a href="" th:href="@{/student-dash-board/students}">Back</a>
+      </div>
+    </main>
+    <footer>
+      <p>Copyright &copy; 2023 XYZ Learning All rights reserved</p>
+    </footer>
+  </body>
+</html>

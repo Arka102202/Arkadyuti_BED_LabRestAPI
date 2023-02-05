@@ -1,0 +1,142 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+input {
+  display: inline-block;
+}
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 1.4rem;
+  height: 100vh;
+  font-family: sans-serif;
+  position: relative;
+  min-height: 100vh;
+  overflow-y: scroll;
+}
+
+header {
+  background-color: #051625;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 3;
+}
+
+header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 3.6rem;
+  padding: 1rem 1.6rem 1rem 1.6rem;
+  padding-right: 3rem;
+  height: 5.2rem;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(90deg, #a7d1f5, #d3e8fa);
+}
+
+.link--tickets:link,
+.link--tickets:visited {
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #d3e8fa;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 5px;
+}
+
+.link--tickets:hover,
+.link--tickets:active {
+  border-bottom: 1px solid #a7d1f5;
+}
+
+.user {
+  display: grid;
+  justify-items: center;
+  color: #d3e8fa;
+  margin-left: auto;
+  font-weight: 600;
+}
+
+.user form input {
+  cursor: pointer;
+}
+
+.btn {
+  padding: 4px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: inherit;
+}
+
+.btn--logout {
+  padding: 0.5rem 2rem;
+  background-color: #dcecfa;
+  transition: all 0.1s;
+}
+
+.btn--logout:hover {
+  background-color: #d3e8fa65;
+}
+
+main {
+  width: 100%;
+  margin-top: 5.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+
+.form--heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #0e385c;
+  color: #fff;
+  padding: 1rem;
+}
+
+.form--heading h2 {
+  font-size: 1.8rem;
+  margin: auto;
+}
+
+img {
+  width: 50%;
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  padding: 10px;
+  border-top: 1px solid rgb(121, 121, 121);
+  border-bottom: 0.2rem solid #0e385c;
+  font-size: 1.2rem;
+  color: #aaa;
+  gap: 2rem;
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="../static/css/edit-page.css"
+      th:href="@{/css/edit-page.css}"
+      type="text/css"
+    />
+    <title>edit page</title>
+  </head>
+  <body>
+    <div class="container--header">
+      <header>
+        <h1>Student Debate Management Application</h1>
+        <a
+          href="#"
+          th:href="@{/student-dash-board/students}"
+          class="link--tickets"
+          >Students</a
+        >
+        <div class="user">
+          <p th:text="${user.username}">Username</p>
+          <form
+            action="/admin/search-ticket"
+            th:action="@{/logout}"
+            method="get"
+          >
+            <input type="submit" value="Logout" class="btn btn--logout" />
+          </form>
+        </div>
+      </header>
+    </div>
+    <main>
+      <div class="form--heading">
+        <h2 th:if="(${student.id} == 0)">Create Student</h2>
+        <h2 th:unless="(${student.id} == 0)">Edit Student</h2>
+      </div>
+      <form
+        action=""
+        th:action="@{/student-dash-board/new-update-student}"
+        method="post"
+        th:object="${student}"
+      >
+        <input type="hidden" name="id" th:value="*{id}" />
+        <div>
+          <label for="firstName">First Name</label>
+          <input
+            type="text"
+            th:field="${student.firstName}"
+            id="firstName"
+            class="ip--text"
+            minlength="3"
+            maxlength="50"
+            required
+          />
+        </div>
+        <div>
+          <label for="lastName">Last Name</label>
+          <input
+            type="text"
+            th:field="${student.lastName}"
+            id="lastName"
+            class="ip--text"
+            minlength="3"
+            maxlength="50"
+            required
+          />
+        </div>
+        <div>
+          <label for="course">Course</label>
+          <input
+            type="text"
+            th:field="*{course}"
+            id="course"
+            class="ip--text"
+            required
+          />
+        </div>
+        <div>
+          <label for="country">Country</label>
+          <input
+            type="text"
+            th:field="*{country}"
+            id="country"
+            class="ip--text"
+            required
+          />
+        </div>
+        <div class="div-btn">
+          <input
+            th:if="(${student.id} == 0)"
+            type="submit"
+            value="Save"
+            class="div-btn--save"
+          />
+          <input
+            th:unless="(${student.id} == 0)"
+            type="submit"
+            value="Update"
+            class="div-btn--update"
+          />
+          <input type="reset" value="reset" class="div-btn--reset" />
+        </div>
+      </form>
+    </main>
+    <footer>
+      <p>Copyright &copy; 2023 XYZ Learning All rights reserved</p>
+    </footer>
+  </body>
+</html>

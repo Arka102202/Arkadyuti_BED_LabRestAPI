@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="../static/css/error.css"
+      th:href="@{/css/error.css}"
+      type="text/css"
+    />
+    <title>Access denied</title>
+  </head>
+  <body>
+    <header>
+      <h1>Student Debate Management Application</h1>
+      <a
+        href="$"
+        th:href="@{/student-dash-board/students}"
+        class="link--tickets"
+        >Students</a
+      >
+      <div class="user">
+        <p th:text="${user.username}">Username</p>
+        <form action="/admin/search-ticket" th:action="@{/logout}" method="get">
+          <input type="submit" value="Logout" class="btn btn--logout" />
+        </form>
+      </div>
+    </header>
+    <main>
+      <div class="form--heading">
+        <h2>HTTP Status 403 - Access is denied....</h2>
+      </div>
+      <img
+        src="../static/img/43152.jpg"
+        th:src="@{/img/43152.jpg}"
+        alt="ticket booking counter"
+        class="img--bg"
+      />
+    </main>
+
+    <footer>
+      <p>
+        <a
+          href="https://www.freepik.com/free-vector/street-signs-safety-concerns-illustration_3226207.htm#query=stop%20sign&position=0&from_view=search&track=sph"
+          >Image by rawpixel.com</a
+        >
+        on Freepik
+      </p>
+      <p>Copyright &copy; 2023 XYZ Learning All rights reserved</p>
+    </footer>
+  </body>
+</html>
